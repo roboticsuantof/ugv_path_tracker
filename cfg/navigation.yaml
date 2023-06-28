@@ -1,0 +1,23 @@
+nav_node:
+
+  robot_base_frame: "X2/base_link"
+  world_frame: "map"
+
+  #Navigation parameters
+  holonomic: false
+  angular_max_speed: 2
+  linear_max_speed: 0.35 #0.6
+  angle_margin: 25 #for 1,5 rad/s and 0.6 m/s 10 degress works good in no holonomic way
+  dist_margin: 0.5
+  traj_timeout: 0.8 #0.025
+  a: 2.5 # for no holonomic 2 its okey with the 1.5 rad/s speed
+  b: 1.5
+  start_orientate_dist: 1.0
+  
+  #security margin params
+
+  f: 2
+  inner_radius: 0.1
+  outer_radius: 0.15
+  full_laser_topic: "/scanMulti"
+  security_stop_topic: "/security_stop"

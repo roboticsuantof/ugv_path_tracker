@@ -1,0 +1,5 @@
+<launch>
+    <node pkg="ugv_path_tracker" type="read_path_node" name="read_path_node" output="screen"># launch-prefix="gdb -ex run --args">
+    </node>
+
+</launch>

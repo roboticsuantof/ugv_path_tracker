@@ -1,0 +1,23 @@
+#Initialize ROS core
+roscore
+
+# Launch simulation:
+roslaunch ugv_simulator ign_x2.launch
+
+# Launch Frames and Localization module:
+roslaunch ugv_simulator frames.launch
+roslaunch ugv_simulator dll.launch
+
+# Launch UGV Path Reader and Path tracker:
+roslaunch ugv_path_tracker read_path.launch
+roslaunch ugv_path_tracker ugv_path_tracker.launch
+
+# Launch Planner module:
+roslaunch heuristic_planners planner2d_example.launch algorithm_name:=thetastar
+
+## Example of points navigation for wirst_map World:
+rosservice call /planner_ros_node/request_path "start: {x: 19.75, y: 10.32, z: 0.0}
+goal: {x: 31.6, y: 7.73, z: 0.0}
+algorithm: {data: 'thetastar'}
+heuristic: {data: ''}
+tries: {data: 1}"
